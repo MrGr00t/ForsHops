@@ -14,7 +14,10 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
-
+//
+// This project includes code from IE11SandboxEscapes(https://github.com/tyranid/IE11SandboxEscapes) by James Forshaw, 
+// licensed under GNU General Public License v3.0. See the project license(https://github.com/tyranid/IE11SandboxEscapes/blob/master/LICENSE) for details.
+// Source information for author's code is provided below.
 
 #include <windows.h>
 #include <olectl.h>
