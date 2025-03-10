@@ -7,7 +7,7 @@ This project contains C++ source code for reflectively loading and executing a .
 
 The technique abuses the trapped COM object bug class originally discovered by [James Forshaw](https://x.com/tiraniddo) of Google Project Zero.
 
-For detailed information, please see the accompanying Security Intelligence blog [post]([https://](https://securityintelligence.com/x-force/fileless-lateral-movement-with-trapped-com-objects/)) by [Dylan Tran](https://x.com/d_tranman) and [Jimmy Bayne](https://x.com/bohops) of IBM X-Force Red.
+For detailed information, please see the accompanying Security Intelligence blog [post]([https://](https://securityintelligence.com/x-force/fileless-lateral-movement-with-trapped-com-objects/) by [Dylan Tran](https://x.com/d_tranman) and [Jimmy Bayne](https://x.com/bohops) of IBM X-Force Red.
 
 ## Usage
 
