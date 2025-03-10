@@ -3,7 +3,7 @@ A proof-of-concept fileless DCOM Lateral Movement technique using trapped COM ob
 
 ## Description
 
-This project contains C++ source code for reflectively loading and executing a .NET assembly in a remote computer's WaaS Medic Service svchost.exe process for lateral movement over DCOM.
+This project contains C++ source code for reflectively loading and executing a .NET assembly in a remote computer's WaaS Medic Service svchost.exe process for DCOM lateral movement.
 
 The technique abuses the trapped COM object bug class originally discovered by [James Forshaw](https://x.com/tiraniddo) of Google Project Zero.
 
@@ -14,7 +14,7 @@ For detailed information, please see the accompanying Security Intelligence blog
 - Compile with Visual Studio
 - Run with the following command under a privileged context:
 ```
-forshops.exe [target machine ] [c:\\path\\to\\assembly\\to\\load]
+forshops.exe [target machine] [c:\\path\\to\\assembly\\to\\load]
 ```
 
 ## References
