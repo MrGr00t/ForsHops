@@ -3,9 +3,11 @@ name: .NET Core Desktop
 on:
   workflow_dispatch:
   push:
-    branches: [ "master" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - main
 
 jobs:
 
@@ -18,7 +20,7 @@ jobs:
     runs-on: windows-2019
 
     env:
-      Solution_Name: SharpDPAPI.sln    #文件名                     # Replace with your solution name, i.e. MyWpfApp.sln.
+      Solution_Name: ForsHops.sln    #文件名                     # Replace with your solution name, i.e. MyWpfApp.sln.
 
     steps:
     - name: Checkout
@@ -48,5 +50,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: SharpDPAPI
+        name: ForsHops
         path: ${{ github.workspace }}
