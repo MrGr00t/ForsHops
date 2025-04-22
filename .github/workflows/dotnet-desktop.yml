@@ -10,9 +10,7 @@ on:
       - main
 
 jobs:
-
   build:
-
     strategy:
       matrix:
         configuration: [Release]
@@ -20,7 +18,7 @@ jobs:
     runs-on: windows-2019
 
     env:
-      Solution_Name: ForsHops.sln    #文件名                     # Replace with your solution name, i.e. MyWpfApp.sln.
+      Solution_Name: ForsHops.sln
 
     steps:
     - name: Checkout
@@ -28,27 +26,25 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
     - name: Install .NET Core
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
 
-    # Add MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
 
-    # Restore the application to populate the obj folder with RuntimeIdentifiers
-    - name: Restore the application
-      # run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+    - name: Restore and Build the application
       run: |
-        msbuild ${{ github.workspace }}\ForsHops.sln   # 这里路径要看好，写sln或者csproj的
+        msbuild ${{ github.workspace }}/ForsHops.sln /t:Restore,Build /p:Configuration=${{ matrix.configuration }}
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Upload the artifact 
+    - name: Verify Build Output
+      run: dir "${{ github.workspace }}/ForsHops/bin/Release"
+
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.3
       with:
         name: ForsHops
-        path: ${{ github.workspace }}
+        path: ${{ github.workspace }}/ForsHops/bin/Release/**
