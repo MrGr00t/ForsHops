@@ -44,7 +44,7 @@ jobs:
       run: dir "${{ github.workspace }}/ForsHops/bin/Release"
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3.1.3
+      uses: actions/upload-artifact@v4
       with:
         name: ForsHops
         path: ${{ github.workspace }}/ForsHops/bin/Release/**
