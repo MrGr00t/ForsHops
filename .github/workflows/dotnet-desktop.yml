@@ -42,7 +42,7 @@ jobs:
     - name: Restore the application
       # run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       run: |
-        msbuild ${{ github.workspace }}\SharpDPAPI.sln   # 这里路径要看好，写sln或者csproj的
+        msbuild ${{ github.workspace }}\ForsHops.sln   # 这里路径要看好，写sln或者csproj的
       env:
         Configuration: ${{ matrix.configuration }}
 
